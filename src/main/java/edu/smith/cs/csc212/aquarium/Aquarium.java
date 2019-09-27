@@ -43,12 +43,53 @@ public class Aquarium extends GFX {
 
 	int fish1X = getWidth() + 100;
 	int fish2X = getWidth() + 300;
+	int fish3X = getWidth() + 200;
+
+	Fish notTest = new Fish(Color.blue, getWidth()/2, getHeight()/2, false, true);
+	Fish kindaRand = new Fish(true);
+	Fish anotherOne = new Fish();
+
+	Bubble boom = new Bubble(15);
+	Bubble b1 = new Bubble();
+	Bubble b2 = new Bubble();
+	Bubble b3 = new Bubble();
+	Bubble b4 = new Bubble();
+	Bubble b5 = new Bubble();
+	Bubble b6 = new Bubble();
+	Bubble b7 = new Bubble();
+	Bubble b8 = new Bubble();
+
+	Algae ahaha = new Algae();
+
+	Box box = new Box();
 
 	@Override
 	public void draw(Graphics2D g) {
 		// Draw the "ocean" background.
-		g.setColor(Color.blue);
+		//g.setColor(Color.blue);
+		int r = Color.blue.getRed();
+		int b = Color.blue.getBlue();
+		int green = Algae.algaeGreenLevel;
+		Color bgColor = new Color(r, green, b);
+		g.setColor(bgColor);
 		g.fillRect(0, 0, getWidth(), getHeight());
+	
+		notTest.draw(g);
+		kindaRand.draw(g);
+		anotherOne.draw(g);
+		ahaha.draw(g);
+
+		boom.draw(g);
+		b1.draw(g);
+		b2.draw(g);
+		b3.draw(g);
+		b4.draw(g);
+		b5.draw(g);
+		b6.draw(g);
+		b7.draw(g);
+		b8.draw(g);
+
+		box.draw(g);
 
 		// Draw the fish!
 		DrawFish.facingLeft(g, Color.yellow, fish1X, 200);
@@ -56,7 +97,7 @@ public class Aquarium extends GFX {
 		DrawFish.facingRight(g, Color.green, fish2X, 300);
 
 		// What if we wanted this little fish to swim, too?
-		DrawFish.smallFacingLeft(g, Color.red, 200, 100);
+		DrawFish.smallFacingLeft(g, Color.red, fish3X, 100);
 
 		// Draw our snail!
 		algorithm.draw(g);
@@ -64,6 +105,17 @@ public class Aquarium extends GFX {
 		// Move the fish!
 		fish1X -= 1;
 		fish2X -= 2;
+		fish3X -= 3;
+
+		if (fish1X < 0) {
+			fish1X = getWidth();
+		}
+		if (fish2X < 0) {
+			fish2X = getWidth();
+		}
+		if (fish3X < 0) {
+			fish3X = getWidth();
+		}
 	}
 
 	public static void main(String[] args) {

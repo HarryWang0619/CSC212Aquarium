@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Aquarium",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.aquarium.Aquarium",
+            "projectName": "Aquarium"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SaveAquariumGIF",
+            "request": "launch",
+            "mainClass": "edu.smith.cs.csc212.aquarium.SaveAquariumGIF",
+            "projectName": "Aquarium"
+        }
+    ]
+}
